@@ -207,7 +207,7 @@ const EMAILS = [
     from: "Wildwood Ridge HOA",
     fromAddr: "payments@wildwoodridge-hoa.com",
     initials: "WR",
-    subject: "Your assessment is due soon - and it's quick to take care of",
+    subject: "Your assessment is due soon",
     preview:
       "Just a few days left, John. A couple of minutes now and you're all set.",
     railNote:
@@ -218,20 +218,21 @@ const EMAILS = [
       )}
       <p class="eb-p">Hi John,</p>
       <p class="eb-p">
-        A quick heads-up, John: your ${ASSOCIATION} assessment of $350 is due in just 3
-        days, on Monday. No stress, though. If you have a couple of minutes, you can
-        take care of it right now and cross it off your list.
+        Your ${ASSOCIATION} assessment of $350 is due in just 3 days, on Monday. If you
+        have a couple of minutes, you can take care of it right now and cross it off
+        your list.
       </p>
       <p class="eb-p">
-        Paying online (or in the app) means it's <strong>done in about two
-        minutes</strong>, you skip the mail, and you'll get an instant confirmation for
-        your records. You can also <strong>turn on automatic payments</strong> while
-        you're there, so next time is completely hands off.
-      </p>
-      <p class="eb-p">
-        You've got this, John. We've made the last step easy.
+        Paying online means it's <strong>done in about two minutes</strong>, you skip
+        the mail, and you'll get an instant confirmation for your records. You can also
+        <strong>turn on automatic payments</strong> while you're there, so next time is
+        completely hands off.
       </p>
 
+      <p class="cta__sub">
+        Typically pay by check? Keep the paper, keep the protection: Use your check
+        details for secure, encrypted online payments.
+      </p>
       <button class="cta" data-cta>Pay $350 Now</button>
       ${note(
         "The CTA is the most direct of the three (&lsquo;Pay now&rsquo;) to match the urgency stage, while the surrounding copy stays supportive rather than pressuring."
