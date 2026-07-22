@@ -151,25 +151,42 @@ const EMAILS = [
       <p class="eb-p">Hi John,</p>
       <p class="eb-p">
         Just a friendly reminder that your ${ASSOCIATION} assessment is coming up in
-        about 10 days. There's no rush at all, but if now's a good time, paying online
-        only takes about two minutes.
+        about 10 days. Paying online only takes about two minutes.
       </p>
       <p class="eb-p">
-        A lot of your neighbors have told us they were glad they gave it a try. It's
-        rated <strong>4.8 out of 5 for ease of use</strong>, and most are done in a
-        couple of minutes. You can pay online or from the app, and if it's handy,
-        <strong>set up automatic payments</strong> so it's taken care of for you going
-        forward.
+        You can pay online or from the app, and if it's handy, <strong>set up automatic
+        payments</strong> so it's taken care of for you going forward. A lot of your
+        neighbors have told us they were glad they gave it a try. See what they're
+        saying below.
       </p>
 
-      <div class="eb-quote">
-        As one ${ASSOCIATION} homeowner put it: &ldquo;Honestly easier than I expected.
-        I paid from the app on my couch and had a receipt right away.&rdquo;
+      <p class="reviews__label">What your neighbors are saying</p>
+      <div class="reviews">
+        <div class="review">
+          <div class="review__stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="review__text">
+            &ldquo;Setting up took about two minutes and I had a receipt right away. So
+            much easier than writing a check every quarter.&rdquo;
+          </p>
+          <div class="review__by"><span class="review__avatar">MG</span>Maria G. &middot; Wildwood Ridge</div>
+        </div>
+        <div class="review">
+          <div class="review__stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="review__text">
+            &ldquo;I turned on automatic payments and now I never think about it. One
+            less thing on my plate every quarter.&rdquo;
+          </p>
+          <div class="review__by"><span class="review__avatar">DR</span>David R. &middot; Wildwood Ridge</div>
+        </div>
+        <div class="review">
+          <div class="review__stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="review__text">
+            &ldquo;I was unsure about paying online, but it felt secure and simple. I
+            only wish I had switched sooner.&rdquo;
+          </p>
+          <div class="review__by"><span class="review__avatar">ST</span>Susan T. &middot; Wildwood Ridge</div>
+        </div>
       </div>
-
-      <p class="eb-p">
-        Whenever it works for you, John, we'll make it painless.
-      </p>
 
       <p class="cta__sub">About 2 minutes &middot; No login required</p>
       <button class="cta" data-cta>Switch to digital payments today</button>
