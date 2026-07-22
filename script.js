@@ -141,7 +141,7 @@ const EMAILS = [
     initials: "WR",
     subject: "A friendly reminder - paying online takes about 2 minutes",
     preview:
-      "No rush at all, John. When you're ready, it's quick and easy.",
+      "Just a friendly reminder, John: your $350 assessment is coming up, and paying online takes about two minutes.",
     railNote:
       "Reminder + social proof: warm and encouraging. Positive proof (&lsquo;homeowners love how easy it is&rsquo;) - never &lsquo;you're behind&rsquo;. This is the 2.1&times; reminder lever.",
     body: `
