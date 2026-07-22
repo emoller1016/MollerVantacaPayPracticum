@@ -104,9 +104,9 @@ const EMAILS = [
       )}
       <p class="eb-p">Hi John,</p>
       <p class="eb-p">
-        Paying your ${ASSOCIATION} assessment just got easier. Your next payment comes
-        up in a few weeks, and whenever you're ready, there's now a simpler way to take
-        care of it.
+        Paying your ${ASSOCIATION} assessment just got easier. Your next payment of
+        $350 comes up in a few weeks, and whenever you're ready, there's now a simpler
+        way to take care of it.
       </p>
       <p class="eb-p">
         You can pay <strong>online or right from your phone</strong> in about two
@@ -117,7 +117,7 @@ const EMAILS = [
       </p>
 
       <p class="cta__sub">Takes about 2 minutes &middot; No login required</p>
-      <button class="cta" data-cta>Switch to digital payments today</button>
+      <button class="cta" data-cta>Pay $350 Now</button>
       ${note(
         "The CTA is low-commitment (&lsquo;Take a look&rsquo;) to match an awareness touch, yet it routes into the same guest checkout so we can still measure early intent."
       )}
@@ -150,8 +150,8 @@ const EMAILS = [
       )}
       <p class="eb-p">Hi John,</p>
       <p class="eb-p">
-        Just a friendly reminder that your ${ASSOCIATION} assessment is coming up in
-        about 10 days. Paying online only takes about two minutes.
+        Just a friendly reminder that your ${ASSOCIATION} assessment of $350 is coming
+        up in about 10 days. Paying online only takes about two minutes.
       </p>
       <p class="eb-p">
         You can pay online or from the app, and if it's handy, <strong>set up automatic
@@ -189,7 +189,7 @@ const EMAILS = [
       </div>
 
       <p class="cta__sub">About 2 minutes &middot; No login required</p>
-      <button class="cta" data-cta>Switch to digital payments today</button>
+      <button class="cta" data-cta>Pay $350 Now</button>
 
       ${trustStrip}
       ${note(
@@ -222,10 +222,9 @@ const EMAILS = [
       )}
       <p class="eb-p">Hi John,</p>
       <p class="eb-p">
-        A quick heads-up, John: your ${ASSOCIATION} assessment of ${money(
-      ASSESSMENT
-    )} is due in just 3 days, on Monday. No stress, though. If you have a couple of
-        minutes, you can take care of it right now and cross it off your list.
+        A quick heads-up, John: your ${ASSOCIATION} assessment of $350 is due in just 3
+        days, on Monday. No stress, though. If you have a couple of minutes, you can
+        take care of it right now and cross it off your list.
       </p>
       <p class="eb-p">
         Paying online (or in the app) means it's <strong>done in about two
@@ -238,7 +237,7 @@ const EMAILS = [
       </p>
 
       <p class="cta__sub">About 2 minutes &middot; Instant receipt</p>
-      <button class="cta" data-cta>Switch to digital payments today</button>
+      <button class="cta" data-cta>Pay $350 Now</button>
       ${note(
         "The CTA is the most direct of the three (&lsquo;Pay now&rsquo;) to match the urgency stage, while the surrounding copy stays supportive rather than pressuring."
       )}
