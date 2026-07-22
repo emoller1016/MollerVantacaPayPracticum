@@ -116,7 +116,6 @@ const EMAILS = [
         every time and you never have to think about it again.
       </p>
 
-      <p class="cta__sub">Takes about 2 minutes &middot; No login required</p>
       <button class="cta" data-cta>Pay $350 Now</button>
       ${note(
         "The CTA is low-commitment (&lsquo;Take a look&rsquo;) to match an awareness touch, yet it routes into the same guest checkout so we can still measure early intent."
@@ -151,10 +150,11 @@ const EMAILS = [
       <p class="eb-p">Hi John,</p>
       <p class="eb-p">
         Just a friendly reminder that your ${ASSOCIATION} assessment of $350 is coming
-        up in about 10 days. Paying online only takes about two minutes.
+        up in about 10 days. Paying online only takes about two minutes. No login
+        required.
       </p>
       <p class="eb-p">
-        You can pay online or from the app, and if it's handy, <strong>set up automatic
+        You can pay for free online or from the app, and if it's handy, <strong>set up automatic
         payments</strong> so it's taken care of for you going forward. A lot of your
         neighbors have told us they were glad they gave it a try. See what they're
         saying below.
@@ -163,32 +163,28 @@ const EMAILS = [
       <p class="reviews__label">What your neighbors are saying</p>
       <div class="reviews">
         <div class="review">
-          <div class="review__stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="review__text">
-            &ldquo;Setting up took about two minutes and I had a receipt right away. So
-            much easier than writing a check every quarter.&rdquo;
-          </p>
-          <div class="review__by"><span class="review__avatar">MG</span>Maria G. &middot; Wildwood Ridge</div>
+          <div class="review__top">
+            <span class="review__stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="review__name">Maria G.</span>
+          </div>
+          <p class="review__text">&ldquo;Set up in two minutes and had a receipt right away.&rdquo;</p>
         </div>
         <div class="review">
-          <div class="review__stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="review__text">
-            &ldquo;I turned on automatic payments and now I never think about it. One
-            less thing on my plate every quarter.&rdquo;
-          </p>
-          <div class="review__by"><span class="review__avatar">DR</span>David R. &middot; Wildwood Ridge</div>
+          <div class="review__top">
+            <span class="review__stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="review__name">David R.</span>
+          </div>
+          <p class="review__text">&ldquo;Turned on autopay and never think about it now.&rdquo;</p>
         </div>
         <div class="review">
-          <div class="review__stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="review__text">
-            &ldquo;I was unsure about paying online, but it felt secure and simple. I
-            only wish I had switched sooner.&rdquo;
-          </p>
-          <div class="review__by"><span class="review__avatar">ST</span>Susan T. &middot; Wildwood Ridge</div>
+          <div class="review__top">
+            <span class="review__stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="review__name">Susan T.</span>
+          </div>
+          <p class="review__text">&ldquo;Felt secure and simple. I wish I'd switched sooner.&rdquo;</p>
         </div>
       </div>
 
-      <p class="cta__sub">About 2 minutes &middot; No login required</p>
       <button class="cta" data-cta>Pay $350 Now</button>
 
       ${trustStrip}
@@ -236,7 +232,6 @@ const EMAILS = [
         You've got this, John. We've made the last step easy.
       </p>
 
-      <p class="cta__sub">About 2 minutes &middot; Instant receipt</p>
       <button class="cta" data-cta>Pay $350 Now</button>
       ${note(
         "The CTA is the most direct of the three (&lsquo;Pay now&rsquo;) to match the urgency stage, while the surrounding copy stays supportive rather than pressuring."
