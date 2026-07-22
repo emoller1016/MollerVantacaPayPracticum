@@ -37,8 +37,8 @@ const trustStrip = `
   <div class="trust">
     <svg class="icon trust__icon"><use href="#i-shield"/></svg>
     <p class="trust__txt">
-      <strong>Secure &amp; private.</strong> Payments are protected with
-      bank-level encryption.
+      <strong>Pay with peace of mind:</strong> Your card and bank details are
+      protected by end-to-end encryption.
     </p>
   </div>`;
 
@@ -156,24 +156,10 @@ const EMAILS = [
       <p class="eb-p">
         You can pay for free online or from the app, and if it's handy, <strong>set up automatic
         payments</strong> so it's taken care of for you going forward. You're in good
-        company, John. Here's how homeowners across your community are already paying.
+        company, John. Most homeowners are already paying online, and most do it
+        right from their phone. In fact, homeowners like you who pay online
+        typically keep paying online.
       </p>
-
-      <p class="reviews__label">How your community pays</p>
-      <div class="proofs">
-        <div class="proof">
-          <svg class="icon proof__icon"><use href="#i-check"/></svg>
-          <span>Most homeowners already pay digitally</span>
-        </div>
-        <div class="proof">
-          <svg class="icon proof__icon"><use href="#i-check"/></svg>
-          <span>and most do it right from their phone</span>
-        </div>
-        <div class="proof">
-          <svg class="icon proof__icon"><use href="#i-check"/></svg>
-          <span>and homeowners who pay online typically keep paying online</span>
-        </div>
-      </div>
 
       <button class="cta" data-cta>Pay $350 Now</button>
 
