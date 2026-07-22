@@ -171,9 +171,8 @@ body {
 /* ---------- Stage layout ---------- */
 .stage {
   display: grid;
-  grid-template-columns: 320px 1fr;
-  gap: 26px;
-  max-width: 1240px;
+  justify-content: center;
+  max-width: 760px;
   margin: 0 auto;
   padding: 28px 22px 40px;
 }

@@ -248,27 +248,9 @@ const state = {
 };
 
 const screen = document.getElementById("screen");
-const railList = document.getElementById("rail-list");
 const viewport = document.getElementById("viewport");
 
 /* ---------- Rendering ----------------------------------------------------- */
-
-function renderRail() {
-  railList.innerHTML = EMAILS.map(
-    (e, i) => `
-    <li>
-      <button class="railcard ${
-        state.view === "email" && state.emailIndex === i ? "is-active" : ""
-      }" data-open-email="${i}">
-        <span class="railcard__node">${i + 1}</span>
-        <span class="railcard__day">${e.dayShort} &middot; ${e.day}</span>
-        <span class="railcard__angle">${e.angle}</span>
-        <span class="railcard__subject">${e.subject}</span>
-        <span class="rail__inline-note">${e.railNote}</span>
-      </button>
-    </li>`
-  ).join("");
-}
 
 function renderInbox() {
   screen.innerHTML = `
@@ -278,8 +260,10 @@ function renderInbox() {
         <span class="inbox__count">${EMAILS.length} messages &middot; ${ASSOCIATION}</span>
       </div>
       <p class="inbox__hint">The 3-touch sequence as the homeowner receives it. Open any message to read it and click through to pay.</p>
-      ${EMAILS.map(
-        (e, i) => `
+      ${EMAILS.map((e, i) => ({ e, i }))
+        .reverse()
+        .map(
+          ({ e, i }) => `
         <button class="mail ${
           state.read.has(i) ? "is-read" : ""
         }" data-open-email="${i}">
@@ -496,7 +480,6 @@ function render() {
   else if (state.view === "email") renderEmail();
   else if (state.view === "checkout") renderCheckout();
   else if (state.view === "success") renderSuccess();
-  renderRail();
 }
 
 function openEmail(i) {
@@ -565,12 +548,6 @@ document.addEventListener("click", (ev) => {
 });
 
 /* ---------- Top-bar controls ---------------------------------------------- */
-
-const rationaleToggle = document.getElementById("rationale-toggle");
-rationaleToggle.addEventListener("click", () => {
-  const on = document.body.classList.toggle("show-rationale");
-  rationaleToggle.setAttribute("aria-pressed", String(on));
-});
 
 document.querySelectorAll(".seg__btn").forEach((btn) => {
   btn.addEventListener("click", () => {
