@@ -24,7 +24,7 @@ const MARKS = {
   amex: `<span class="mark mark--amex">AMEX</span>`,
   disc: `<span class="mark mark--disc"><b>DISC</b>VER</span>`,
   apple: `<span class="mark mark--apple">&#63743;&nbsp;Pay</span>`,
-  ach: `<span class="mark mark--ach">BANK</span>`,
+  ach: `<span class="mark mark--ach">ACH</span>`,
 };
 
 const cardMarks = MARKS.visa + MARKS.mc + MARKS.amex + MARKS.disc;
@@ -51,7 +51,7 @@ const paymentBanner = `
       <span class="pbanner__phone"><svg class="icon"><use href="#i-phone"/></svg></span>
       <div class="pbanner__apptext">
         <strong>Pay in seconds with the Vantaca Home app</strong>
-        <span>Pay and manage your assessment anytime, from anywhere.</span>
+        <span>Community at your fingertips. Manage your payments and requests anytime, from anywhere.</span>
       </div>
       <div class="pbanner__stores">
         <span class="storebadge"><svg class="icon storebadge__glyph"><use href="#i-apple"/></svg><span class="storebadge__txt"><small>Download on the</small>App Store</span></span>
@@ -71,6 +71,8 @@ const emailFooter = `
   <div class="eb-foot">
     ${ASSOCIATION} &middot; Questions? Just reply to this email and we'll be happy
     to help.
+    <br />Prefer not to receive these reminders?
+    <a class="eb-optout" href="#">Opt out here</a>.
   </div>`;
 
 /* ---------- Email content ------------------------------------------------- */
@@ -102,24 +104,20 @@ const EMAILS = [
       )}
       <p class="eb-p">Hi John,</p>
       <p class="eb-p">
-        We wanted to give you a quick, friendly heads-up: paying your ${ASSOCIATION}
-        assessment just got easier. Your next payment comes up in a few weeks, and
-        whenever you're ready, there's now a simpler way to take care of it.
+        Paying your ${ASSOCIATION} assessment just got easier. Your next payment comes
+        up in a few weeks, and whenever you're ready, there's now a simpler way to take
+        care of it.
       </p>
       <p class="eb-p">
         You can pay <strong>online or right from your phone</strong> in about two
-        minutes &mdash; no trip to the mailbox, and you'll get an instant receipt for
-        your records. If you'd like, you can even <strong>set up automatic
-        payments</strong>, so it's handled for you every time and you never have to
-        think about it again.
-      </p>
-      <p class="eb-p">
-        There's nothing you need to do today, John &mdash; we just wanted you to know
-        it's there for whenever it's convenient.
+        minutes. Online payments are <strong>free and convenient</strong>: no trip to
+        the mailbox, no stamps, and an instant receipt for your records. If you'd like,
+        you can even <strong>set up automatic payments</strong>, so it's handled for you
+        every time and you never have to think about it again.
       </p>
 
       <p class="cta__sub">Takes about 2 minutes &middot; No login required</p>
-      <button class="cta" data-cta>Take a look at the options</button>
+      <button class="cta" data-cta>Switch to digital payments today</button>
       ${note(
         "The CTA is low-commitment (&lsquo;Take a look&rsquo;) to match an awareness touch, yet it routes into the same guest checkout so we can still measure early intent."
       )}
@@ -153,20 +151,20 @@ const EMAILS = [
       <p class="eb-p">Hi John,</p>
       <p class="eb-p">
         Just a friendly reminder that your ${ASSOCIATION} assessment is coming up in
-        about 10 days. There's no rush at all &mdash; but if now's a good time, paying
-        online only takes about two minutes.
+        about 10 days. There's no rush at all, but if now's a good time, paying online
+        only takes about two minutes.
       </p>
       <p class="eb-p">
-        A lot of your neighbors have told us they were glad they gave it a try &mdash;
-        it's rated <strong>4.8 out of 5 for ease of use</strong>, and most are done in a
+        A lot of your neighbors have told us they were glad they gave it a try. It's
+        rated <strong>4.8 out of 5 for ease of use</strong>, and most are done in a
         couple of minutes. You can pay online or from the app, and if it's handy,
         <strong>set up automatic payments</strong> so it's taken care of for you going
         forward.
       </p>
 
       <div class="eb-quote">
-        &ldquo;Honestly easier than I expected &mdash; I paid from the app on my couch
-        and had a receipt right away.&rdquo; &mdash; A ${ASSOCIATION} homeowner
+        As one ${ASSOCIATION} homeowner put it: &ldquo;Honestly easier than I expected.
+        I paid from the app on my couch and had a receipt right away.&rdquo;
       </div>
 
       <p class="eb-p">
@@ -174,7 +172,7 @@ const EMAILS = [
       </p>
 
       <p class="cta__sub">About 2 minutes &middot; No login required</p>
-      <button class="cta" data-cta>Pay when you're ready</button>
+      <button class="cta" data-cta>Switch to digital payments today</button>
 
       ${trustStrip}
       ${note(
@@ -207,23 +205,23 @@ const EMAILS = [
       )}
       <p class="eb-p">Hi John,</p>
       <p class="eb-p">
-        A quick heads-up &mdash; your ${ASSOCIATION} assessment of ${money(
+        A quick heads-up, John: your ${ASSOCIATION} assessment of ${money(
       ASSESSMENT
-    )} is due in just 3 days, on Monday. No stress, though: if you have a couple of
+    )} is due in just 3 days, on Monday. No stress, though. If you have a couple of
         minutes, you can take care of it right now and cross it off your list.
       </p>
       <p class="eb-p">
         Paying online (or in the app) means it's <strong>done in about two
         minutes</strong>, you skip the mail, and you'll get an instant confirmation for
         your records. You can also <strong>turn on automatic payments</strong> while
-        you're there, so next time is completely hands-off.
+        you're there, so next time is completely hands off.
       </p>
       <p class="eb-p">
-        You've got this, John &mdash; we've made the last step easy.
+        You've got this, John. We've made the last step easy.
       </p>
 
       <p class="cta__sub">About 2 minutes &middot; Instant receipt</p>
-      <button class="cta" data-cta>Pay now &mdash; it's quick</button>
+      <button class="cta" data-cta>Switch to digital payments today</button>
       ${note(
         "The CTA is the most direct of the three (&lsquo;Pay now&rsquo;) to match the urgency stage, while the surrounding copy stays supportive rather than pressuring."
       )}
@@ -521,6 +519,10 @@ function startCheckout() {
 /* ---------- Event delegation ---------------------------------------------- */
 
 document.addEventListener("click", (ev) => {
+  if (ev.target.closest(".eb-optout")) {
+    ev.preventDefault();
+    return;
+  }
   const openBtn = ev.target.closest("[data-open-email]");
   if (openBtn) {
     openEmail(Number(openBtn.dataset.openEmail));
