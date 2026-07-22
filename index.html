@@ -3,12 +3,143 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>MollerVantacaPayPracticum</title>
+    <title>Vantaca Pay — Multi-Touch Conversion Sequence</title>
+    <meta
+      name="description"
+      content="Interactive prototype: a 3-email multi-touch sequence to convert check payers to digital payment for Vantaca Pay."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <main>
-      <h1>MollerVantacaPayPracticum</h1>
-      <p>Vantaca Pay practicum prototype — content coming soon.</p>
+    <!-- Reusable icon defs (payment marks, lock, chevrons) -->
+    <svg
+      width="0"
+      height="0"
+      style="position: absolute"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <defs>
+        <symbol id="i-lock" viewBox="0 0 24 24">
+          <path
+            fill="currentColor"
+            d="M12 1a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-9a2 2 0 0 0-2-2h-1V6a5 5 0 0 0-5-5Zm3 8H9V6a3 3 0 1 1 6 0v3Zm-3 5a1.75 1.75 0 0 1 1 3.19V20a1 1 0 1 1-2 0v-2.81A1.75 1.75 0 0 1 12 14Z"
+          />
+        </symbol>
+        <symbol id="i-shield" viewBox="0 0 24 24">
+          <path
+            fill="currentColor"
+            d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3Zm-1.2 13.4-3.1-3.1 1.4-1.4 1.7 1.7 4.1-4.1 1.4 1.4-5.5 5.5Z"
+          />
+        </symbol>
+        <symbol id="i-bolt" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z" />
+        </symbol>
+        <symbol id="i-chevron" viewBox="0 0 24 24">
+          <path
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m9 6 6 6-6 6"
+          />
+        </symbol>
+        <symbol id="i-check" viewBox="0 0 24 24">
+          <path
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m5 13 4 4L19 7"
+          />
+        </symbol>
+        <symbol id="i-clock" viewBox="0 0 24 24">
+          <path
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M12 7v5l3 2M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+          />
+        </symbol>
+      </defs>
+    </svg>
+
+    <header class="appbar">
+      <div class="appbar__brand">
+        <span class="appbar__logo" aria-hidden="true">VP</span>
+        <div class="appbar__titles">
+          <h1 class="appbar__title">Vantaca Pay — Multi-Touch Conversion Sequence</h1>
+          <p class="appbar__subtitle">
+            Prototype · Option B · Convert check payers to digital
+          </p>
+        </div>
+      </div>
+      <div class="appbar__controls">
+        <button
+          id="rationale-toggle"
+          class="toggle"
+          type="button"
+          aria-pressed="false"
+        >
+          <span class="toggle__dot" aria-hidden="true"></span>
+          PM rationale
+        </button>
+        <div class="seg" role="group" aria-label="Device preview">
+          <button
+            id="device-desktop"
+            class="seg__btn is-active"
+            type="button"
+            data-device="desktop"
+          >
+            Desktop
+          </button>
+          <button
+            id="device-mobile"
+            class="seg__btn"
+            type="button"
+            data-device="mobile"
+          >
+            Mobile
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="stage" id="stage">
+      <!-- Left rail: sequence timeline -->
+      <aside class="rail" id="rail" aria-label="Sequence timeline">
+        <h2 class="rail__heading">The 3-touch sequence</h2>
+        <ol class="rail__list" id="rail-list"></ol>
+        <div class="rail__note">
+          <strong>Why 3 touches?</strong> 66% of check payers never open the single
+          beta email. A reminder touch drove <strong>2.1× conversion</strong> in the
+          beta — so we attack the biggest leak with repeated, escalating messaging.
+        </div>
+      </aside>
+
+      <!-- Device viewport holding inbox / email / checkout -->
+      <section class="viewport" id="viewport" data-device="desktop">
+        <div class="device" id="device">
+          <div class="device__notch" aria-hidden="true"></div>
+          <div class="device__screen" id="screen">
+            <!-- Views injected by script.js -->
+          </div>
+        </div>
+      </section>
     </main>
+
+    <footer class="foot">
+      <p>
+        Illustrative prototype for the Vantaca Pay PM practicum. Copy, stats, and
+        payment marks are representative placeholders.
+      </p>
+    </footer>
+
+    <script src="script.js" defer></script>
   </body>
 </html>
