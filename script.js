@@ -160,18 +160,18 @@ const EMAILS = [
       </p>
 
       <p class="reviews__label">How your community pays</p>
-      <div class="stats">
-        <div class="stat">
-          <div class="stat__num">52%</div>
-          <div class="stat__cap">of homeowners already pay digitally</div>
+      <div class="proofs">
+        <div class="proof">
+          <svg class="icon proof__icon"><use href="#i-check"/></svg>
+          <span>Most homeowners already pay digitally</span>
         </div>
-        <div class="stat">
-          <div class="stat__num">68%</div>
-          <div class="stat__cap">of those who switch stay digital</div>
+        <div class="proof">
+          <svg class="icon proof__icon"><use href="#i-check"/></svg>
+          <span>and most do it right from their phone</span>
         </div>
-        <div class="stat">
-          <div class="stat__num">64%</div>
-          <div class="stat__cap">pay right from their phone</div>
+        <div class="proof">
+          <svg class="icon proof__icon"><use href="#i-check"/></svg>
+          <span>and homeowners who pay online typically keep paying online</span>
         </div>
       </div>
 
