@@ -802,6 +802,123 @@ body {
   background: #0a8f6b;
 }
 
+/* Consistent app + payment-methods banner (used in every email) */
+.pbanner {
+  margin: 20px 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #fff;
+}
+
+.pbanner__app {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+  color: #fff;
+  background: linear-gradient(120deg, var(--navy), var(--navy-2));
+}
+
+.pbanner__phone {
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 11px;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 255, 255, 0.14);
+  font-size: 22px;
+}
+
+.pbanner__apptext {
+  flex: 1;
+  min-width: 0;
+}
+
+.pbanner__apptext strong {
+  display: block;
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+.pbanner__apptext span {
+  display: block;
+  font-size: 12px;
+  color: #b9cdf0;
+  margin-top: 2px;
+}
+
+.pbanner__stores {
+  display: flex;
+  gap: 8px;
+  flex: none;
+}
+
+.storebadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 11px;
+  border-radius: 8px;
+  background: #000;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #fff;
+}
+
+.storebadge__glyph {
+  font-size: 17px;
+  flex: none;
+}
+
+.storebadge__txt {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.05;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.storebadge__txt small {
+  font-size: 8px;
+  font-weight: 500;
+  opacity: 0.85;
+  letter-spacing: 0.02em;
+}
+
+.pbanner__methods {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 12px 16px;
+  background: #f7f9fc;
+}
+
+.pbanner__mlabel {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+.pbanner__marks {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+@media (max-width: 560px) {
+  .pbanner__app {
+    flex-wrap: wrap;
+  }
+  .pbanner__stores {
+    width: 100%;
+  }
+}
+
 /* CTA button */
 .cta {
   display: block;

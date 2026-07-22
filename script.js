@@ -43,32 +43,29 @@ const trustStrip = `
     </p>
   </div>`;
 
-// Payment-methods block used inside emails. Cards + Apple Pay come first and are
-// visually emphasized; ACH is offered but secondary. The 2.95% card fee is
-// always disclosed up front so we don't recreate the "why am I being charged?"
-// support tickets.
-const payMethodsBlock = `
-  <div class="pay">
-    <div class="pay__head">Pay your way &mdash; in about 2 minutes</div>
-    <div class="pay__row pay__row--primary">
-      <div class="pay__marks">${allCardMarks}</div>
-      <div>
-        <div class="pay__label">Card &amp; Apple Pay</div>
-        <div class="pay__meta">Fastest &mdash; no account or routing number needed. 2.95% fee.</div>
+// One consistent banner reused across all three emails. It promotes the Vantaca
+// Home mobile app and shows icons for every accepted payment method, without
+// pulling focus away from each email's stage-appropriate message.
+const paymentBanner = `
+  <div class="pbanner">
+    <div class="pbanner__app">
+      <span class="pbanner__phone"><svg class="icon"><use href="#i-phone"/></svg></span>
+      <div class="pbanner__apptext">
+        <strong>Pay in seconds with the Vantaca Home app</strong>
+        <span>Pay and manage your assessment anytime, from anywhere.</span>
       </div>
-      <span class="pay__badge pay__badge--fast">Fastest</span>
+      <div class="pbanner__stores">
+        <span class="storebadge"><svg class="icon storebadge__glyph"><use href="#i-apple"/></svg><span class="storebadge__txt"><small>Download on the</small>App Store</span></span>
+        <span class="storebadge"><svg class="icon storebadge__glyph"><use href="#i-play"/></svg><span class="storebadge__txt"><small>Get it on</small>Google Play</span></span>
+      </div>
     </div>
-    <div class="pay__row">
-      <div class="pay__marks">${MARKS.ach}</div>
-      <div>
-        <div class="pay__label">Bank transfer (ACH)</div>
-        <div class="pay__meta">No fee. Needs your routing &amp; account number.</div>
-      </div>
-      <span class="pay__badge pay__badge--free">No fee</span>
+    <div class="pbanner__methods">
+      <span class="pbanner__mlabel">Accepted payment methods</span>
+      <div class="pbanner__marks">${allCardMarks}${MARKS.ach}</div>
     </div>
   </div>
   ${note(
-    "All emails advertise the full method set (Visa, Mastercard, Amex, Discover, Apple Pay, ACH). Cards &amp; Apple Pay are listed first and tagged &lsquo;Fastest&rsquo; to nudge the higher take-rate path, while the 2.95% fee stays visible to protect trust (19% of beta tickets were fee-surprise complaints)."
+    "A single consistent banner (Vantaca Home app + all accepted method icons) runs in every email, so the payment logistics stay present but never overshadow each touch's core message."
   )}`;
 
 const emailFooter = `
@@ -79,9 +76,11 @@ const emailFooter = `
   </div>`;
 
 /* ---------- Email content ------------------------------------------------- */
-/* Three escalating touches: awareness -> social proof+trust -> urgency.
-   Every email carries: secure/private messaging, the full payment-method set
-   with cards/Apple Pay prioritized, and the 2.95% fee disclosed.            */
+/* Three escalating touches whose TONE carries the message: awareness (calm,
+   informative) -> reminder with social proof (warm, encouraging) -> urgency
+   (supportive, time-aware). Encouraging throughout - never shaming, never
+   pressuring. A single consistent banner handles the app + payment methods so
+   the copy can stay focused on each stage's purpose.                         */
 
 const EMAILS = [
   {
@@ -94,22 +93,21 @@ const EMAILS = [
     from: "Vantaca Pay",
     fromAddr: "pay@wildwoodridge-hoa.com",
     initials: "VP",
-    subject: "A faster, safer way to pay your assessment",
+    subject: "There's now an easier way to pay your assessment",
     preview:
-      "Pay by card, Apple Pay, or bank transfer - set up online in about 2 minutes.",
+      "Whenever it's convenient for you, you can now pay online or in the Vantaca Home app.",
     railNote:
-      "Leads with value + choice to answer the 14% of tickets asking &lsquo;why would I change?&rsquo;",
+      "Awareness: calm and informative. Introduce the option early, no ask to rush - just plant the idea 20 days out.",
     body: `
       ${note(
-        "Touch 1 fixes the biggest leak first: 66% never opened the single beta email. A soft, benefit-led opener earns the open and plants the value prop 20 days ahead of the due date."
+        "Touch 1 earns the open and plants the idea. Tone is calm and purely informative - no deadline, no pressure - because 66% never opened the single beta email and the goal here is simple awareness."
       )}
       <div class="eb-hero">
-        <p class="eb-hero__eyebrow">Vantaca Pay</p>
-        <h2 class="eb-hero__headline">Skip the checkbook. Pay online in about 2 minutes.</h2>
+        <p class="eb-hero__eyebrow">A little heads-up from Vantaca Pay</p>
+        <h2 class="eb-hero__headline">Paying your assessment just got easier</h2>
         <p class="eb-hero__sub">
-          Your next ${ASSOCIATION} assessment of ${money(
-      ASSESSMENT
-    )} is coming up. You can now pay online with the method that's easiest for you.
+          Your next ${ASSOCIATION} assessment comes up in a few weeks. Whenever
+          you're ready, you now have a simpler way to take care of it.
         </p>
       </div>
 
@@ -117,19 +115,23 @@ const EMAILS = [
         Hi there,
       </p>
       <p class="eb-p">
-        Paying by check means printing, stamping, and mailing &mdash; and hoping it
-        arrives on time. Paying online with Vantaca Pay is <strong>faster, trackable,
-        and you get an instant receipt.</strong> No portal account to create.
+        We wanted to let you know about an option some homeowners have found handy:
+        you can now pay your assessment <strong>online or right from your phone</strong>
+        &mdash; no trip to the mailbox, and you get an instant receipt for your records.
+      </p>
+      <p class="eb-p">
+        There's nothing you need to do today. We just wanted you to know it's there
+        for whenever it's convenient.
       </p>
 
-      ${payMethodsBlock}
+      ${paymentBanner}
 
       ${trustStrip}
 
       <p class="cta__sub">Takes about 2 minutes &middot; No login required</p>
-      <button class="cta" data-cta>See your payment options</button>
+      <button class="cta" data-cta>Take a look at the options</button>
       ${note(
-        "CTA is exploratory (&lsquo;See your payment options&rsquo;), not high-commitment, because this touch is about awareness. It routes to the same guest checkout so we can measure intent even 20 days out."
+        "The CTA is low-commitment (&lsquo;Take a look&rsquo;) to match an awareness touch, yet it routes into the same guest checkout so we can still measure early intent."
       )}
 
       ${emailFooter}
@@ -139,56 +141,58 @@ const EMAILS = [
     id: "e2",
     day: "10 days out",
     dayShort: "Day -10",
-    angle: "Social proof + trust",
+    angle: "Reminder + social proof",
     date: "Thu, Jul 30",
     tag: "Touch 2 of 3",
     from: "Vantaca Pay",
     fromAddr: "pay@wildwoodridge-hoa.com",
     initials: "VP",
-    subject: "Most of your neighbors already pay online",
+    subject: "A friendly reminder - paying online takes about 2 minutes",
     preview:
-      "8 in 10 households at Wildwood Ridge pay digitally. Bank-level security - your info is never shared.",
+      "No rush at all. When you're ready, thousands of homeowners find it quick and easy.",
     railNote:
-      "Reminder touch = the beta's strongest lever (a 48h reminder drove 2.1&times; conversion). Adds social proof + a security guarantee.",
+      "Reminder + social proof: warm and encouraging. Positive proof (&lsquo;homeowners love how easy it is&rsquo;) - never &lsquo;you're behind&rsquo;. This is the 2.1&times; reminder lever.",
     body: `
       ${note(
-        "Touch 2 is the reminder that mattered most in the beta: a follow-up nudge produced a 2.1&times; conversion lift. We pair it with social proof and a direct answer to the 11% who don't trust entering details online."
+        "Touch 2 is the reminder that mattered most in the beta (a follow-up drove a 2.1&times; lift). Social proof is framed as encouragement - &lsquo;homeowners love how easy it is&rsquo; - not as pressure to keep up with neighbors."
       )}
       <div class="eb-hero eb-hero--proof">
-        <p class="eb-hero__eyebrow">Join your neighbors</p>
-        <p class="eb-hero__big">8 in 10</p>
+        <p class="eb-hero__eyebrow">Just a friendly reminder</p>
+        <h2 class="eb-hero__headline">When you're ready, it only takes about 2 minutes</h2>
         <p class="eb-hero__sub">
-          households at ${ASSOCIATION} already pay their assessment online. Setting
-          up takes about 2 minutes.
+          Your ${ASSOCIATION} assessment is coming up in about 10 days. No rush &mdash;
+          but if now's a good time, paying online is quick and easy.
         </p>
       </div>
 
-      <div class="eb-proof">
-        <div class="eb-proof__num">4.8&#9733;</div>
-        <div class="eb-proof__txt">
-          Homeowners rate the online payment experience 4.8 out of 5 for ease of use.
-        </div>
-      </div>
-
       <p class="eb-p">
-        Still paying by check? You're in the minority now &mdash; and switching is
-        easier than mailing one more envelope.
+        Hi again,
+      </p>
+      <p class="eb-p">
+        A gentle nudge in case it's helpful. Plenty of homeowners have told us they
+        were glad they gave online payment a try &mdash; it's rated
+        <strong>4.8 out of 5 for ease of use</strong>, and most are done in a couple
+        of minutes.
       </p>
 
       <div class="eb-quote">
-        &ldquo;I set up Apple Pay in under a minute and got a receipt instantly. Wish
-        I'd done it sooner.&rdquo; &mdash; Homeowner, ${ASSOCIATION}
+        &ldquo;Honestly easier than I expected &mdash; I paid from the app on my couch
+        and had a receipt right away.&rdquo; &mdash; A ${ASSOCIATION} homeowner
       </div>
+
+      <p class="eb-p">
+        Whenever it works for you, we'll make it painless.
+      </p>
+
+      ${paymentBanner}
 
       ${trustStrip}
       ${note(
-        "Security/privacy is stated in every touch, but it's the emotional centerpiece here where trust objections would otherwise block conversion."
+        "Security/privacy is stated in every touch; reinforcing it here reassures the 11% of beta tickets that cited trust concerns, without leaning on fear."
       )}
 
-      ${payMethodsBlock}
-
-      <p class="cta__sub">Have your card or Apple Pay ready &middot; No login required</p>
-      <button class="cta" data-cta>Set up my payment</button>
+      <p class="cta__sub">About 2 minutes &middot; No login required</p>
+      <button class="cta" data-cta>Pay when you're ready</button>
 
       ${emailFooter}
     `,
@@ -197,50 +201,57 @@ const EMAILS = [
     id: "e3",
     day: "3 days out",
     dayShort: "Day -3",
-    angle: "Urgency + loss aversion",
+    angle: "Urgency (supportive)",
     date: "Thu, Aug 6",
     tag: "Touch 3 of 3",
     from: "Vantaca Pay",
     fromAddr: "pay@wildwoodridge-hoa.com",
     initials: "VP",
-    subject: `Your ${money(ASSESSMENT)} assessment is due in 3 days`,
+    subject: "Your assessment is due soon - and it's quick to take care of",
     preview:
-      "Don't risk a late fee in the mail. Pay in about 2 minutes with Apple Pay or card.",
+      "Just a few days left. A couple of minutes now and you're all set.",
     railNote:
-      "Final urgency touch creates a fresh 24h window (24h clickers completed at 73% vs. 52%). Fastest path = card/Apple Pay.",
+      "Urgency, delivered supportively: time-aware but still warm and reassuring (&lsquo;you've got this, here's the quick way&rsquo;). Fresh 24h action window (73% vs. 52%).",
     body: `
       ${note(
-        "Touch 3 converts the still-undecided with a deadline. Each new send creates a fresh 24-hour action window &mdash; and beta clickers who acted within 24h completed at 73% vs. 52% overall."
+        "Touch 3 adds urgency through timing, not fear. It acknowledges the deadline while staying warm and reassuring, and each new send opens a fresh 24-hour window (beta clickers who acted within 24h completed at 73% vs. 52%)."
       )}
       <div class="eb-hero eb-hero--urgent">
-        <p class="eb-hero__eyebrow">Action needed</p>
+        <p class="eb-hero__eyebrow">A quick heads-up</p>
         <h2 class="eb-hero__headline">Your assessment is due in 3 days</h2>
         <p class="eb-hero__sub">
-          ${money(
-            ASSESSMENT
-          )} to ${ASSOCIATION} &mdash; due Monday. Skip the trip to the mailbox.
+          No stress &mdash; if you have a couple of minutes, you can take care of it
+          right now and cross it off your list.
         </p>
       </div>
 
       <div class="eb-countdown">
         <svg class="icon"><use href="#i-clock"/></svg>
-        3 days left &middot; A mailed check may not arrive in time
+        Due in 3 days &middot; About 2 minutes online or in the app
       </div>
 
       <p class="eb-p">
-        The fastest way to pay right now is <strong>Apple Pay or card</strong> &mdash;
-        no routing or account number to look up. You'll be done in about 2 minutes and
-        get an instant confirmation.
+        Hi there,
+      </p>
+      <p class="eb-p">
+        Your ${ASSOCIATION} assessment of ${money(
+      ASSESSMENT
+    )} is due Monday. Paying online now means it's <strong>done in a couple of
+        minutes</strong>, you skip the mail, and you'll get an instant confirmation for
+        your records.
+      </p>
+      <p class="eb-p">
+        You've got this &mdash; we've made the last step easy.
       </p>
 
-      ${payMethodsBlock}
+      ${paymentBanner}
 
       ${trustStrip}
 
-      <p class="cta__sub">Fastest with Apple Pay &middot; Instant receipt</p>
-      <button class="cta" data-cta>Pay now in 2 minutes</button>
+      <p class="cta__sub">About 2 minutes &middot; Instant receipt</p>
+      <button class="cta" data-cta>Pay now &mdash; it's quick</button>
       ${note(
-        "The urgency CTA is the most direct (&lsquo;Pay now&rsquo;) and foregrounds Apple Pay/card as the fastest route, doubling as friction relief for the 31% who abandon at bank routing/account entry."
+        "The CTA is the most direct of the three (&lsquo;Pay now&rsquo;) to match the urgency stage, while the surrounding copy stays supportive rather than pressuring."
       )}
 
       ${emailFooter}
