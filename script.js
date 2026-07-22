@@ -155,33 +155,23 @@ const EMAILS = [
       </p>
       <p class="eb-p">
         You can pay for free online or from the app, and if it's handy, <strong>set up automatic
-        payments</strong> so it's taken care of for you going forward. A lot of your
-        neighbors have told us they were glad they gave it a try. See what they're
-        saying below.
+        payments</strong> so it's taken care of for you going forward. You're in good
+        company, John. Here's how homeowners across your community are already paying.
       </p>
 
-      <p class="reviews__label">What your neighbors are saying</p>
-      <div class="reviews">
-        <div class="review">
-          <div class="review__top">
-            <span class="review__stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-            <span class="review__name">Maria G.</span>
-          </div>
-          <p class="review__text">&ldquo;Set up in two minutes and had a receipt right away.&rdquo;</p>
+      <p class="reviews__label">How your community pays</p>
+      <div class="stats">
+        <div class="stat">
+          <div class="stat__num">52%</div>
+          <div class="stat__cap">of homeowners already pay digitally</div>
         </div>
-        <div class="review">
-          <div class="review__top">
-            <span class="review__stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-            <span class="review__name">David R.</span>
-          </div>
-          <p class="review__text">&ldquo;Turned on autopay and never think about it now.&rdquo;</p>
+        <div class="stat">
+          <div class="stat__num">68%</div>
+          <div class="stat__cap">of those who switch stay digital</div>
         </div>
-        <div class="review">
-          <div class="review__top">
-            <span class="review__stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-            <span class="review__name">Susan T.</span>
-          </div>
-          <p class="review__text">&ldquo;Felt secure and simple. I wish I'd switched sooner.&rdquo;</p>
+        <div class="stat">
+          <div class="stat__num">64%</div>
+          <div class="stat__cap">pay right from their phone</div>
         </div>
       </div>
 
