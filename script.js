@@ -38,8 +38,7 @@ const trustStrip = `
     <svg class="icon trust__icon"><use href="#i-shield"/></svg>
     <p class="trust__txt">
       <strong>Secure &amp; private.</strong> Payments are protected with
-      bank-level encryption. Your card and bank details are never stored on your
-      device and never shared or sold.
+      bank-level encryption.
     </p>
   </div>`;
 
@@ -70,9 +69,8 @@ const paymentBanner = `
 
 const emailFooter = `
   <div class="eb-foot">
-    Vantaca Pay on behalf of ${ASSOCIATION}. You're receiving this because your
-    assessment is paid by check. Guest checkout &mdash; no portal login required.
-    <br />Prefer to keep mailing checks? No action needed.
+    ${ASSOCIATION} &middot; Questions? Just reply to this email and we'll be happy
+    to help.
   </div>`;
 
 /* ---------- Email content ------------------------------------------------- */
@@ -90,49 +88,45 @@ const EMAILS = [
     angle: "Awareness",
     date: "Mon, Jul 20",
     tag: "Touch 1 of 3",
-    from: "Vantaca Pay",
-    fromAddr: "pay@wildwoodridge-hoa.com",
-    initials: "VP",
+    from: "Wildwood Ridge HOA",
+    fromAddr: "payments@wildwoodridge-hoa.com",
+    initials: "WR",
     subject: "There's now an easier way to pay your assessment",
     preview:
-      "Whenever it's convenient for you, you can now pay online or in the Vantaca Home app.",
+      "Whenever it's convenient for you, John, you can now pay online or in the Vantaca Home app.",
     railNote:
       "Awareness: calm and informative. Introduce the option early, no ask to rush - just plant the idea 20 days out.",
     body: `
       ${note(
         "Touch 1 earns the open and plants the idea. Tone is calm and purely informative - no deadline, no pressure - because 66% never opened the single beta email and the goal here is simple awareness."
       )}
-      <div class="eb-hero">
-        <p class="eb-hero__eyebrow">A little heads-up from Vantaca Pay</p>
-        <h2 class="eb-hero__headline">Paying your assessment just got easier</h2>
-        <p class="eb-hero__sub">
-          Your next ${ASSOCIATION} assessment comes up in a few weeks. Whenever
-          you're ready, you now have a simpler way to take care of it.
-        </p>
-      </div>
-
+      <p class="eb-p">Hi John,</p>
       <p class="eb-p">
-        Hi there,
+        We wanted to give you a quick, friendly heads-up: paying your ${ASSOCIATION}
+        assessment just got easier. Your next payment comes up in a few weeks, and
+        whenever you're ready, there's now a simpler way to take care of it.
       </p>
       <p class="eb-p">
-        We wanted to let you know about an option some homeowners have found handy:
-        you can now pay your assessment <strong>online or right from your phone</strong>
-        &mdash; no trip to the mailbox, and you get an instant receipt for your records.
+        You can pay <strong>online or right from your phone</strong> in about two
+        minutes &mdash; no trip to the mailbox, and you'll get an instant receipt for
+        your records. If you'd like, you can even <strong>set up automatic
+        payments</strong>, so it's handled for you every time and you never have to
+        think about it again.
       </p>
       <p class="eb-p">
-        There's nothing you need to do today. We just wanted you to know it's there
-        for whenever it's convenient.
+        There's nothing you need to do today, John &mdash; we just wanted you to know
+        it's there for whenever it's convenient.
       </p>
-
-      ${paymentBanner}
-
-      ${trustStrip}
 
       <p class="cta__sub">Takes about 2 minutes &middot; No login required</p>
       <button class="cta" data-cta>Take a look at the options</button>
       ${note(
         "The CTA is low-commitment (&lsquo;Take a look&rsquo;) to match an awareness touch, yet it routes into the same guest checkout so we can still measure early intent."
       )}
+
+      ${trustStrip}
+
+      ${paymentBanner}
 
       ${emailFooter}
     `,
@@ -144,35 +138,30 @@ const EMAILS = [
     angle: "Reminder + social proof",
     date: "Thu, Jul 30",
     tag: "Touch 2 of 3",
-    from: "Vantaca Pay",
-    fromAddr: "pay@wildwoodridge-hoa.com",
-    initials: "VP",
+    from: "Wildwood Ridge HOA",
+    fromAddr: "payments@wildwoodridge-hoa.com",
+    initials: "WR",
     subject: "A friendly reminder - paying online takes about 2 minutes",
     preview:
-      "No rush at all. When you're ready, thousands of homeowners find it quick and easy.",
+      "No rush at all, John. When you're ready, it's quick and easy.",
     railNote:
       "Reminder + social proof: warm and encouraging. Positive proof (&lsquo;homeowners love how easy it is&rsquo;) - never &lsquo;you're behind&rsquo;. This is the 2.1&times; reminder lever.",
     body: `
       ${note(
         "Touch 2 is the reminder that mattered most in the beta (a follow-up drove a 2.1&times; lift). Social proof is framed as encouragement - &lsquo;homeowners love how easy it is&rsquo; - not as pressure to keep up with neighbors."
       )}
-      <div class="eb-hero eb-hero--proof">
-        <p class="eb-hero__eyebrow">Just a friendly reminder</p>
-        <h2 class="eb-hero__headline">When you're ready, it only takes about 2 minutes</h2>
-        <p class="eb-hero__sub">
-          Your ${ASSOCIATION} assessment is coming up in about 10 days. No rush &mdash;
-          but if now's a good time, paying online is quick and easy.
-        </p>
-      </div>
-
+      <p class="eb-p">Hi John,</p>
       <p class="eb-p">
-        Hi again,
+        Just a friendly reminder that your ${ASSOCIATION} assessment is coming up in
+        about 10 days. There's no rush at all &mdash; but if now's a good time, paying
+        online only takes about two minutes.
       </p>
       <p class="eb-p">
-        A gentle nudge in case it's helpful. Plenty of homeowners have told us they
-        were glad they gave online payment a try &mdash; it's rated
-        <strong>4.8 out of 5 for ease of use</strong>, and most are done in a couple
-        of minutes.
+        A lot of your neighbors have told us they were glad they gave it a try &mdash;
+        it's rated <strong>4.8 out of 5 for ease of use</strong>, and most are done in a
+        couple of minutes. You can pay online or from the app, and if it's handy,
+        <strong>set up automatic payments</strong> so it's taken care of for you going
+        forward.
       </p>
 
       <div class="eb-quote">
@@ -181,18 +170,18 @@ const EMAILS = [
       </div>
 
       <p class="eb-p">
-        Whenever it works for you, we'll make it painless.
+        Whenever it works for you, John, we'll make it painless.
       </p>
 
-      ${paymentBanner}
+      <p class="cta__sub">About 2 minutes &middot; No login required</p>
+      <button class="cta" data-cta>Pay when you're ready</button>
 
       ${trustStrip}
       ${note(
         "Security/privacy is stated in every touch; reinforcing it here reassures the 11% of beta tickets that cited trust concerns, without leaning on fear."
       )}
 
-      <p class="cta__sub">About 2 minutes &middot; No login required</p>
-      <button class="cta" data-cta>Pay when you're ready</button>
+      ${paymentBanner}
 
       ${emailFooter}
     `,
@@ -204,55 +193,44 @@ const EMAILS = [
     angle: "Urgency (supportive)",
     date: "Thu, Aug 6",
     tag: "Touch 3 of 3",
-    from: "Vantaca Pay",
-    fromAddr: "pay@wildwoodridge-hoa.com",
-    initials: "VP",
+    from: "Wildwood Ridge HOA",
+    fromAddr: "payments@wildwoodridge-hoa.com",
+    initials: "WR",
     subject: "Your assessment is due soon - and it's quick to take care of",
     preview:
-      "Just a few days left. A couple of minutes now and you're all set.",
+      "Just a few days left, John. A couple of minutes now and you're all set.",
     railNote:
       "Urgency, delivered supportively: time-aware but still warm and reassuring (&lsquo;you've got this, here's the quick way&rsquo;). Fresh 24h action window (73% vs. 52%).",
     body: `
       ${note(
         "Touch 3 adds urgency through timing, not fear. It acknowledges the deadline while staying warm and reassuring, and each new send opens a fresh 24-hour window (beta clickers who acted within 24h completed at 73% vs. 52%)."
       )}
-      <div class="eb-hero eb-hero--urgent">
-        <p class="eb-hero__eyebrow">A quick heads-up</p>
-        <h2 class="eb-hero__headline">Your assessment is due in 3 days</h2>
-        <p class="eb-hero__sub">
-          No stress &mdash; if you have a couple of minutes, you can take care of it
-          right now and cross it off your list.
-        </p>
-      </div>
-
-      <div class="eb-countdown">
-        <svg class="icon"><use href="#i-clock"/></svg>
-        Due in 3 days &middot; About 2 minutes online or in the app
-      </div>
-
+      <p class="eb-p">Hi John,</p>
       <p class="eb-p">
-        Hi there,
-      </p>
-      <p class="eb-p">
-        Your ${ASSOCIATION} assessment of ${money(
+        A quick heads-up &mdash; your ${ASSOCIATION} assessment of ${money(
       ASSESSMENT
-    )} is due Monday. Paying online now means it's <strong>done in a couple of
-        minutes</strong>, you skip the mail, and you'll get an instant confirmation for
-        your records.
+    )} is due in just 3 days, on Monday. No stress, though: if you have a couple of
+        minutes, you can take care of it right now and cross it off your list.
       </p>
       <p class="eb-p">
-        You've got this &mdash; we've made the last step easy.
+        Paying online (or in the app) means it's <strong>done in about two
+        minutes</strong>, you skip the mail, and you'll get an instant confirmation for
+        your records. You can also <strong>turn on automatic payments</strong> while
+        you're there, so next time is completely hands-off.
       </p>
-
-      ${paymentBanner}
-
-      ${trustStrip}
+      <p class="eb-p">
+        You've got this, John &mdash; we've made the last step easy.
+      </p>
 
       <p class="cta__sub">About 2 minutes &middot; Instant receipt</p>
       <button class="cta" data-cta>Pay now &mdash; it's quick</button>
       ${note(
         "The CTA is the most direct of the three (&lsquo;Pay now&rsquo;) to match the urgency stage, while the surrounding copy stays supportive rather than pressuring."
       )}
+
+      ${trustStrip}
+
+      ${paymentBanner}
 
       ${emailFooter}
     `,
