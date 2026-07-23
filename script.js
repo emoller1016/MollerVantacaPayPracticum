@@ -95,7 +95,7 @@ const EMAILS = [
     initials: "WR",
     subject: "There's now an easier way to pay your assessment",
     preview:
-      "Whenever it's convenient for you, John, you can now pay online or in the Vantaca Home app.",
+      "Just a quick heads-up, John: your next $350 assessment is coming up in a few weeks, and paying online is now free and simple.",
     railNote:
       "Awareness: calm and informative. Introduce the option early, no ask to rush - just plant the idea 20 days out.",
     body: `
@@ -104,16 +104,14 @@ const EMAILS = [
       )}
       <p class="eb-p">Hi John,</p>
       <p class="eb-p">
-        Paying your ${ASSOCIATION} assessment just got easier. Your next payment of
-        $350 comes up in a few weeks, and whenever you're ready, there's now a simpler
-        way to take care of it.
+        Just a quick heads-up that your next ${ASSOCIATION} assessment of $350 is
+        coming up in a few weeks. We've made paying it much simpler. You can now make
+        free payments online.
       </p>
       <p class="eb-p">
-        You can pay <strong>online or right from your phone</strong> in about two
-        minutes. Online payments are <strong>free and convenient</strong>: no trip to
-        the mailbox, no stamps, and an instant receipt for your records. If you'd like,
-        you can even <strong>set up automatic payments</strong>, so it's handled for you
-        every time and you never have to think about it again.
+        It only takes a few minutes, it's secure, and you'll get an instant receipt.
+        If you prefer, you can also <strong>set up automatic payments</strong> so it's
+        taken care of every time without any effort.
       </p>
 
       <button class="cta" data-cta>Pay $350 Now</button>
