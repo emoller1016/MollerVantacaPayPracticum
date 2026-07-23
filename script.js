@@ -138,7 +138,7 @@ const EMAILS = [
     initials: "WR",
     subject: "A friendly reminder - paying online takes about 2 minutes",
     preview:
-      "Just a friendly reminder, John: your $350 assessment is coming up, and paying online takes about two minutes.",
+      "Just a friendly reminder, John: your $350 assessment is coming up in about 10 days, and paying online only takes a couple of minutes.",
     railNote:
       "Reminder + social proof: warm and encouraging. Positive proof (&lsquo;homeowners love how easy it is&rsquo;) - never &lsquo;you're behind&rsquo;. This is the 2.1&times; reminder lever.",
     body: `
@@ -148,15 +148,13 @@ const EMAILS = [
       <p class="eb-p">Hi John,</p>
       <p class="eb-p">
         Just a friendly reminder that your ${ASSOCIATION} assessment of $350 is coming
-        up in about 10 days. Paying online only takes about two minutes. No login
-        required.
+        up in about 10 days. Paying online only takes a couple of minutes. You can pay
+        for free online or from the app. You can also <strong>set up automatic
+        payments</strong> so everything is handled for you going forward.
       </p>
       <p class="eb-p">
-        You can pay for free online or from the app, and if it's handy, <strong>set up automatic
-        payments</strong> so it's taken care of for you going forward. You're in good
-        company, John. Most homeowners are already paying online, and most do it
-        right from their phone. In fact, homeowners like you who pay online
-        typically keep paying online.
+        You're in good company. Most of your neighbors already pay online. It's the
+        easiest way to stay ahead of assessments and avoid late fees.
       </p>
 
       <button class="cta" data-cta>Pay $350 Now</button>
