@@ -181,7 +181,7 @@ const EMAILS = [
     initials: "WR",
     subject: "Your assessment is due soon",
     preview:
-      "Just a few days left, John. A couple of minutes now and you're all set.",
+      "Your $350 assessment is due in just 3 days. Submit a secure payment online today to stay current and avoid late fees.",
     railNote:
       "Urgency, delivered supportively: time-aware but still warm and reassuring (&lsquo;you've got this, here's the quick way&rsquo;). Fresh 24h action window (73% vs. 52%).",
     body: `
@@ -190,15 +190,13 @@ const EMAILS = [
       )}
       <p class="eb-p">Hi John,</p>
       <p class="eb-p">
-        Your ${ASSOCIATION} assessment of $350 is due in just 3 days, on Monday. If you
-        have a couple of minutes, you can take care of it right now and cross it off
-        your list.
+        Your ${ASSOCIATION} assessment of $350 is due in just 3 days. Submit a secure
+        payment online today to stay current and avoid late fees.
       </p>
       <p class="eb-p">
-        Paying online means it's <strong>done in about two minutes</strong>, you skip
-        the mail, and you'll get an instant confirmation for your records. You can also
-        <strong>turn on automatic payments</strong> while you're there, so next time is
-        completely hands off.
+        You'll get instant confirmation for your records, and you can even
+        <strong>set up free automatic payments</strong> while you're there so next
+        time is completely hands off.
       </p>
 
       <p class="cta__sub">
